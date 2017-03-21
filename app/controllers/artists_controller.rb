@@ -23,18 +23,23 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
   end
 
+  def update
+    @artist = Artist.find(params[:id])
+    @artist.update(artist_params)
+    @artist.save
+    redirect_to artist_path(@artist)
+  end
 
   def destroy
     @artist = find_artist
     @artist.destroy
     redirect_to root_path
   end
-
-  def update
-    @artist = Artist.find(params[:id])
-    @artist.update(artist_params)
-    @artist.save
-    redirect_to artist_path(@artist)
+  def image_paths
+    @artist = find_artist
+    @artist.photos.each do |photo|
+      photo.path
+    end
   end
 
   private
