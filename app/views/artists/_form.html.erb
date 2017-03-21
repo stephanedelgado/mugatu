@@ -1,0 +1,13 @@
+<%= simple_form_for @artist do |f| %>
+<%= f.error_notification %>
+<%= f.input :first_name, label:false, placeholder: "First name" %>
+<%= f.input :last_name, label:false, placeholder: "Last name" %>
+<%= f.input :age, input_html: {min:18}, label:false, placeholder: "Age"  %>
+<%= f.input :gender, collection:["Female", "Male", "Transgender", "Other"]%>
+<%= f.input :height, label:"Height in cm", input_html: {min:150, max:220}, label:false, placeholder: "Height"  %>
+<%= f.input :shoe_size, input_html:{min:32, max:55}, label:false, placeholder: "Shoe size"  %>
+<%= f.input :address, label:false, placeholder: "Address"  %>
+<%= f.input :phone_number, label:false, placeholder: "Phone number starting with +86" %>
+<%= f.input :daily_rate, label:"Daily rate to book this model(USD)", input_html:{min: 5} %>
+<%= f.button :submit %>
+<% end %>

@@ -1,17 +1,5 @@
 <div class="container">
 <h1>Upload a model</h1>
 <p></p>
-<%= simple_form_for @artist do |f| %>
-<%= f.error_notification %>
-<%= f.input :first_name, label: "First name" %>
-<%= f.input :last_name, label: "Last name" %>
-<%= f.input :age %>
-<%= f.input :gender, collection:["Female", "Male", "Transgender", "Other"]  %>
-<%= f.input :address %>
-<%= f.input :height, label:"Height in cm", input_html: {min:150, max:220} %>
-<%= f.input :shoe_size, input_html:{min:32, max:55} %>
-<%= f.input :daily_rate, label:"Daily rate to book this model(USD)", input_html:{min: 5} %>
-<%= f.input %>
-<%= f.button :submit %>
-<% end %>
+<%= render 'form' %>
 </div>

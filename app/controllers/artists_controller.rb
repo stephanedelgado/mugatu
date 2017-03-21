@@ -6,11 +6,11 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
+    @artist.user_id = current_user.id
     if @artist.save
-      # redirect_to artist_path(@artist)
-      redirect_to root
+      render :new
     else
-      render(:new)
+      render :new
     end
   end
 
