@@ -9,7 +9,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <% @artist.photos.each do |photo| %>
-    <div class="item active">
+    <div class="item">
     <%= cl_image_tag photo.path %>
     </div>
   <% end %>
