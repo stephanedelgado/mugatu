@@ -16,3 +16,19 @@
 @import "devise/index";
 
 
+.wrapper {
+  background-color: $light_grey;
+  padding: 40px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-container{
+  text-align: auto;
+  padding: 40px;
+  max-width: 600px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
