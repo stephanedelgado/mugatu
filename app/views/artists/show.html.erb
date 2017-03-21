@@ -1,0 +1,77 @@
+<h1 class="text-center"><%=@artist.first_name%> <%= @artist.last_name%></h1>
+
+<body>
+
+<!-- Start of Carousel -->
+
+<%= render 'shared/carousel' %>
+
+<div class="container" id="model-info">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="card" style="">
+        <div class="card-category"></div>
+        <div class="card-description">
+        <img class="card-user avatar-large" src="https://unsplash.it/100/100">
+          <p>
+            <ul class="contact list-unstyled text-left">
+              <li>Name: <%= @artist.first_name%> <%=@artist.last_name%></li>
+              <li>Age: <%= @artist.age%></li>
+              <li>Phone Number: <%=@artist.phone_number%></li>
+            </ul>
+          </p>
+        </div>
+        <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="card">
+        <div class="card-category"></div>
+        <div class="card-description">
+          <p>
+            <ul class="specs list-unstyled text-left">
+              <li>Location: <%=@artist.address%></li>
+              <li>Height: <%=@artist.height%></li>
+              <li>Shoe Size: <%=@artist.shoe_size%></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="booking-info">
+  <div class="row">
+    <div class="col-xs-12">
+        <div class="btn" >
+          <a class="btn-danger" href="#" ></a>
+        </div>
+      </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="card">
+        <div class="card-category">Calendar</div>
+        <div class="card-description">
+          <div class="input-daterange input-group" id="datepicker">
+            <input type="text" class="input-sm form-control" name="start" />
+            <span class="input-group-addon">to</span>
+            <input type="text" class="input-sm form-control" name="end" />
+          </div>
+          <input type="submit">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="card">
+        <div class="card-category">Google Map Will Go Here</div>
+        <div class="card-description">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+
