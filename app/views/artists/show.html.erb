@@ -5,6 +5,14 @@
 
   <!-- Start of Carousel -->
   <div class="container text-center" id="model-info">
+  <div class="text-center">
+  <h1><%=@artist.first_name%> <%= @artist.last_name%></h1>
+  </div>
+  <% image_paths = @artist.photos.map{ |photo| photo.path }  %>
+  <div class="carousel">
+        <%= carousel_for(image_paths) %>
+  </div>
+
     <div class="row">
     </div>
     <div class="row">
