@@ -27,11 +27,12 @@ artists_images = [
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     age: (18..35).to_a.sample,
-    phone_number: Faker::PhoneNumber.cell_phone,
     address: Faker::Address.city,
     height: (175..195).to_a.sample,
     shoe_size: (36..45).to_a.sample,
     daily_rate: (36..45).to_a.sample,
+    gender:["Male","Female","Transgender","Other"].sample,
+    phone_number:["+8613812345678","+8613012345678","+8618212345678"].sample
   })
   puts "Saving the user"
   artist.save!
