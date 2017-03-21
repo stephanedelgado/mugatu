@@ -9,5 +9,6 @@
 <%= f.input :phone_number, label:false, placeholder: "Phone number starting with +86" %>
 <%= f.input :gender, collection:["Female", "Male", "Transgender", "Other"]%>
 <%= f.input :daily_rate, label:"Daily rate to book this model(USD)", input_html:{min: 5} %>
+<%= f.input :photos, as: :attachinary %>
 <%= f.button :submit %>
 <% end %>

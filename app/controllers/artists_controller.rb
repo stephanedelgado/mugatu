@@ -35,7 +35,8 @@ class ArtistsController < ApplicationController
                                     :height,
                                     :shoe_size,
                                     :daily_rate,
-                                    :user_id)
+                                    :user_id,
+                                    :photos)
 
   end
 
