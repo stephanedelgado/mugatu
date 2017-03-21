@@ -1,5 +1,9 @@
 class ArtistsController < ApplicationController
 
+  def show
+    find_artist
+  end
+
   def new
     @artist = Artist.new
   end
@@ -12,9 +16,14 @@ class ArtistsController < ApplicationController
     else
       render :new
     end
+
   end
 
   private
+
+
+  def find_artist
+    @artist = Artist.find(params[:id])
 
   def artist_params
     params.require(:artist).permit(:first_name,
@@ -27,6 +36,7 @@ class ArtistsController < ApplicationController
                                     :shoe_size,
                                     :daily_rate,
                                     :user_id)
+
   end
 
 end
