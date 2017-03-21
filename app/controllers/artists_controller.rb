@@ -12,11 +12,17 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
     @artist.user_id = current_user.id
     if @artist.save
-      render :new
+      redirect_to artist_path(@artist)
     else
       render :new
     end
 
+  end
+
+  def destroy
+    @artist = find_artist
+    @artist.destroy
+    redirect_to root_path
   end
 
   private
