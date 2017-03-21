@@ -1,4 +1,6 @@
 class Artist < ApplicationRecord
+  has_attachments :photos, maximum: 6
+
   belongs_to :user
   has_many :bookings
   has_many :users, through: :bookings
