@@ -1,38 +1,39 @@
-<h1 class="text-center"><%=@artist.first_name%> <%= @artist.last_name%></h1>
+<div class="wrapper">
+  <h1 class="text-center"><%=@artist.first_name%> <%= @artist.last_name%></h1>
 
 
 
-<!-- Start of Carousel -->
+  <!-- Start of Carousel -->
 
-<div class="container text-center" id="model-info">
-  <div class="row">
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-            <ul>
-              <li>Name: <%= @artist.first_name%> <%=@artist.last_name%></li>
-              <li>Age: <%= @artist.age%></li>
-              <li>Phone Number: <%=@artist.phone_number%></li>
-            </ul>
+  <div class="container text-center" id="model-info">
+    <div class="row">
     </div>
-    <div class="col-xs-12 col-sm-4">
-            <ul>
-              <li>Location: <%=@artist.address%></li>
-              <li>Height: <%=@artist.height%></li>
-              <li>Shoe Size: <%=@artist.shoe_size%></li>
-            </ul>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li>Name: <%= @artist.first_name%> <%=@artist.last_name%></li>
+                <li>Age: <%= @artist.age%></li>
+                <li>Phone Number: <%=@artist.phone_number%></li>
+              </ul>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li>Location: <%=@artist.address%></li>
+                <li>Height: <%=@artist.height%></li>
+                <li>Shoe Size: <%=@artist.shoe_size%></li>
+              </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <ul>
+
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <p>map here</p>
     </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <ul>
-
-      </ul>
-    </div>
   </div>
-  <div class="row">
-    <p>map here</p>
-  </div>
-
 </div>
-
 
