@@ -1,7 +1,3 @@
-<% @artist.photos.each do |photo| %>
-<%= image_tag photo.path %>
-<% end %>
-
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -12,25 +8,13 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
+    <% @artist.photos.each do |photo| %>
     <div class="item active">
-      <img src="https://unsplash.it/300/400" alt=""> <!-- needs cloudinary path -->
-      <div class="carousel-caption">
-        <h3>Photo 1</h3>
-      </div>
+    <%= cl_image_tag photo.path %>
     </div>
-    <div class="item">
-      <img src="https://unsplash.it/300/400" alt=""> <!-- needs cloudinary path -->
-      <div class="carousel-caption">
-        <h3>Photo 2</h3>
-      </div>
-    </div>
-    <div class="item">
-      <img src="https://unsplash.it/300/400" alt=""> <!-- needs cloudinary path -->
-      <div class="carousel-caption">
-        <h3>Photo 3</h3>
-      </div>
-    </div>
+  <% end %>
   </div>
+
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
