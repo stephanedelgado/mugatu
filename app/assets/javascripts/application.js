@@ -1,5 +1,7 @@
 //= require jquery
 //= require jquery-fileupload/basic
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require jquery_ujs
