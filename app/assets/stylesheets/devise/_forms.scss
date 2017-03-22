@@ -1,8 +1,6 @@
 .wrapper-form {
   width: 100%;
   height: 100%;
-  background-color: $light_grey;
-  padding: 40px 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -11,9 +9,7 @@
 
 
 .container-form {
-  padding: 40px;
-  max-width: 600px;
-  background: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  margin: 20px;
+  width: 600px;
+  background: #EDEDED;
+  padding: 20px;
 }
