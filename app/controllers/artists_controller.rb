@@ -10,6 +10,9 @@ class ArtistsController < ApplicationController
       marker.lat artist.latitude
       marker.lng artist.longitude
     end
+
+    find_artist
+    @booking = Booking.new
   end
 
   def new
@@ -53,9 +56,9 @@ class ArtistsController < ApplicationController
   private
 
 
-  # def find_artist
-  #   @artist = Artist.find(params[:id])
-  # end
+  def find_artist
+    @artist = Artist.find(params[:id])
+  end
 
   def artist_params
     params.require(:artist).permit(:first_name,
