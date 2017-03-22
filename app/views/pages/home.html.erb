@@ -21,7 +21,9 @@
         <div class="col-xs-12 col-sm-3">
             <div class="card">
               <div class="card-image">
-              <%= cl_image_tag artist.photos[1].path %>
+                <% if artist.photos.any? %>
+                <%= cl_image_tag artist.photos[0].path %>
+                <% end %>
               </div>
               <div class="card-name">
                 <h2><%= artist.first_name %> <%= artist.last_name %></h2>
