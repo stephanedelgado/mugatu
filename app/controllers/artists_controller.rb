@@ -53,13 +53,13 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @artist.update(artist_params)
     @artist.save
-    redirect_to artist_path(@artist)
+    redirect_to dashboard_path
   end
 
   def destroy
     @artist = find_artist
     @artist.destroy
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   def image_paths

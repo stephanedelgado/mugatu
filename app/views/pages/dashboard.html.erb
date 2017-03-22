@@ -1,1 +1,31 @@
+<div class="wrapper">
+  <div class="container form-container">
+  <h1 class="text-center"><%= current_user.first_name %></h1>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 text-center">
+      <h2>My Artists</h2>
+        <% @user_artists.each do |artist| %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(artist.photos.first) %>);">
+            <div class="card-category"><p><%= artist.first_name %></p></div>
+            <div class="card-description"></div>
+            <%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, artist_path(artist), method: :delete, class:"icon delete" %>
+            <%= link_to "<i class='fa fa-pencil-square-o' aria-hidden='true'></i>".html_safe, edit_artist_path(artist), class:"icon edit" %>
+            <%= link_to "".html_safe, artist_path(artist), class:"card-link"%>
+          </div>
+        <% end %>
+
+      </div>
+      <div class="col-xs-12 col-sm-6 text-center">
+        <h2>Bookings</h2>
+        <ol class="bookings text-left">
+          <li>booking</li>
+          <li>booking</li>
+          <li>booking</li>
+          <li>booking</li>
+          <li>booking</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
 
