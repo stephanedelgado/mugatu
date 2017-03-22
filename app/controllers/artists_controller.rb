@@ -2,10 +2,17 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.where.not(latitude: nil, longitude: nil)
-     @hash = Gmaps4rails.build_markers(@artists) do |artist, marker|
-      marker.lat artist.latitude
-      marker.lng artist.longitude
-    end
+
+      if params[:search]
+        @artists = @artists.near(params[:search], 100).order("created_at DESC")
+      else
+        @artists = @artists.order('created_at DESC')
+      end
+
+      @hash = Gmaps4rails.build_markers(@artists) do |artist, marker|
+        marker.lat artist.latitude
+        marker.lng artist.longitude
+      end
   end
 
   def show
@@ -60,6 +67,8 @@ class ArtistsController < ApplicationController
       photo.path
     end
   end
+
+
 
   private
 
