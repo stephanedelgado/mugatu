@@ -14,3 +14,103 @@
 html, body {
   height:100%;
 }
+
+
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  margin-top: -32px;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+body {
+  background: #DDD;
+  font-size: 15px;
+}
+.search-wrapper {
+  position: relative;
+  width: 600px;
+}
+
+#search {
+  height: 60px;
+  font-size: 55px;
+  display: inline-block;
+  font-family: "Lato";
+  font-weight: 100;
+  border: none;
+  outline: none;
+  color: #555;
+  padding: 3px;
+  padding-right: 60px;
+  width: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  z-index: 3;
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+  color: white;
+}
+
+#search:focus:hover {
+  border-bottom: 1px solid #BBB;
+  color: white;
+}
+
+#search:focus {
+  width: 600px;
+  color: white;
+  z-index: 1;
+  border-bottom: 1px solid #BBB;
+  cursor: text;
+}
+#search_submit {
+  outline: none;
+  height: 67px;
+  width: 63px;
+  display: inline-block;
+  color: white;
+  font-size: 3em;
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.1;
+  cursor: pointer;
+  -webkit-transition: opacity .1s ease;
+  transition: opacity .1s ease;
+}
+
+#search_submit:hover {
+  color: white;
+  opacity: 0.1;
+}
+
+.form {
+  color: white;
+}
