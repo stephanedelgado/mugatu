@@ -1,0 +1,37 @@
+.card {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  background-size: cover !important;
+  color: black;
+  position: relative;
+  text-transform: uppercase;
+  padding: 50px;
+  &:hover {
+    background-color: #F8F8F8;
+    box-shadow: 10px 10px 20px 0 rgba(0,0,0,.02);
+  }
+  & h2 {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  & p {
+    font-size: 12px;
+    font-weight: lighter;
+  }
+}
+.card-image img {
+  max-height: 300px;
+  max-width: 80%;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+  padding:10px;
+}
+

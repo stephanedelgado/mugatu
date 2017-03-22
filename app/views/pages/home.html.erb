@@ -1,2 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'banner.jpeg' %>);">
+  <div class="banner-content">
+    <p>Models are everywhere, find them</p>
+    <div class="container search-wrapper">
+      <form action="" autocomplete="on">
+        <input id="search" name="search" type="text" placeholder="Search Now">
+        <button id="search_submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <div class="container text-center">
+    <div class="row">
+      <% @artists.each do |artist| %>
+        <div class="col-xs-12 col-sm-3">
+            <div class="card">
+              <div class="card-image">
+                <% if artist.photos.any? %>
+                <%= cl_image_tag artist.photos[0].path %>
+                <% end %>
+              </div>
+              <div class="card-name">
+                <h2><%= artist.first_name %> <%= artist.last_name %></h2>
+                <p>$<%= artist.daily_rate %></p>
+                <p class="small">LOCATION</p>
+              </div>
+              <%= link_to "", artist_path(artist), class: "card-link" %>
+            </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
