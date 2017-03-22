@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.where.not(latitude: nil, longitude: nil)
-
+    @search = params[:search]
       if params[:search]
         @artists = @artists.near(params[:search], 100).order("created_at DESC")
       else
