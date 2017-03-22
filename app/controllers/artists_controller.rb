@@ -1,6 +1,16 @@
 class ArtistsController < ApplicationController
 
   def show
+    # find_artist
+    @artist = Artist.find(params[:id])
+    # @artist_coordinates = { lat: @artist.latitude, lng: @artist.longitude }
+    # @artist_map = Artist.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@artist) do |artist, marker|
+      marker.lat artist.latitude
+      marker.lng artist.longitude
+    end
+
     find_artist
     @booking = Booking.new
   end
