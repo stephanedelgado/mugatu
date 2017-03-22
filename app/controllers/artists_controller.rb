@@ -1,7 +1,11 @@
 class ArtistsController < ApplicationController
 
   def index
-    @artists = Artist.all
+    @artists = Artist.where.not(latitude: nil, longitude: nil)
+     @hash = Gmaps4rails.build_markers(@artists) do |artist, marker|
+      marker.lat artist.latitude
+      marker.lng artist.longitude
+    end
   end
 
   def show
