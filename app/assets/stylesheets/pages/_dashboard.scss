@@ -2,6 +2,7 @@
   z-index: 98;
 }
 .card .icon {
+  color: white;
   position: absolute;
   z-index: 99;
   color: black;
@@ -9,17 +10,19 @@
     color: red;
   }
 }
-
-.delete{
+.delete {
   bottom: 20px;
   left: 20px;
 }
 
-.edit{
+.edit {
   bottom: 20px;
   right: 20px;
 }
 
 .bookings li{
   margin-top: 20px;
+}
+.dashboard_artist_name {
+  color: white;
 }
