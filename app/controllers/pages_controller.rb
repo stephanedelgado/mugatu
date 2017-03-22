@@ -6,4 +6,13 @@ class PagesController < ApplicationController
 
   end
 
+  def dashboard
+    @user = current_user.id
+    all_artists = Artist.all
+    @user_artists = []
+    all_artists.each { |artist| @user_artists << artist if artist.user_id == current_user.id }
+  end
+
+
 end
+
