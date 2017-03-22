@@ -2,6 +2,7 @@ class ArtistsController < ApplicationController
 
   def show
     find_artist
+    @booking = Booking.new
   end
 
   def new
