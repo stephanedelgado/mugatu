@@ -46,6 +46,7 @@ class ArtistsController < ApplicationController
     @artist.destroy
     redirect_to root_path
   end
+
   def image_paths
     @artist = find_artist
     @artist.photos.each do |photo|
@@ -71,7 +72,7 @@ class ArtistsController < ApplicationController
                                     :shoe_size,
                                     :daily_rate,
                                     :user_id,
-                                    :photos)
+                                    photos: [])
 
   end
 
