@@ -14,36 +14,22 @@
 
 
 <div class="row">
-
-  <!-- Start of Carousel -->
-<%= render 'shared/carousel' %>
   <div class="container text-center" id="model-info">
   <div class="text-center">
   <h1><%=@artist.first_name%> <%= @artist.last_name%></h1>
   </div>
-  <% image_paths = @artist.photos.map{ |photo| photo.path }  %>
+<!--   <% image_paths = @artist.photos.map{ |photo| photo.path }  %>
   <div class="carousel">
         <%= carousel_for(image_paths) %>
-  </div>
-
+  </div> -->
     <div class="row">
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-6">
               <ul>
                 <li>Name: <%= @artist.first_name%> <%=@artist.last_name%></li>
                 <li>Age: <%= @artist.age%></li>
                 <li>Phone Number: <%=@artist.phone_number%></li>
               </ul>
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-                <ul>
-                  <li>Name: <%= @artist.first_name%> <%=@artist.last_name%></li>
-                  <li>Age: <%= @artist.age%></li>
-                  <li>Phone Number: <%=@artist.phone_number%></li>
-                </ul>
-        </div>
         <div class="col-xs-12 col-sm-6">
                 <ul>
                   <li>Location: <%=@artist.address%></li>
@@ -52,10 +38,8 @@
                 </ul>
         </div>
 
-        <div class="col-xs-12">
-          <ul>
+        <div class="row">
             <p>Dynamic form here</p>
-          </ul>
         </div>
       </div>
       <div class="row">
