@@ -4,12 +4,13 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  box-shadow: 10px 10px 20px 0 rgba(0,0,0,.02);
 }
-
-
 
 .container-form {
   width: 600px;
-  background: #EDEDED;
+  background: #F4F4F4;
   padding: 20px;
+  border-radius: 6px;
 }
+

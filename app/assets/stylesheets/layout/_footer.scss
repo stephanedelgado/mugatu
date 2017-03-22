@@ -10,4 +10,10 @@
   bottom: 0px;
   z-index: 1;
   width: 100%;
+  & p {
+    font-size: 10px;
+  }
+  & a {
+    font-size: 24px;
+  }
 }
