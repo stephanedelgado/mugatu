@@ -1,51 +1,38 @@
 <div class="wrapper">
-  <!-- Start of Carousel -->
-  <div class="artist-container text-center">
-    <% image_paths = @artist.photos.each do |photo| %>
-    <div class="model_page_image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path photo.path%>);">
-    <h1><%=@artist.first_name%> <%= @artist.last_name%></h1>
-    </div>
-    <% end %>
-
-
-  <!--   <div class="carousel">
-          <%= carousel_for(image_paths) %>
-    </div> -->
-
-
-<div class="row">
-  <div class="container text-center" id="model-info">
-  <div class="text-center">
-  <h1><%=@artist.first_name%> <%= @artist.last_name%></h1>
-  </div>
-<!--   <% image_paths = @artist.photos.map{ |photo| photo.path }  %>
-  <div class="carousel">
-        <%= carousel_for(image_paths) %>
-  </div> -->
+  <div class="artist-container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12">
+       <% @artist.photos.each.with_index do |photo, index| %>
+        <div class="model_page_image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path photo.path%>);">
+          <% if index == 0 %>
+            <div class="artist-info">
+              <h1><%=@artist.first_name%> <%= @artist.last_name%></h1>
+              <div class="booking-form"><%= render 'shared/booking_form' %></div>
+            </div>
+          <% elsif index == 1 %>
+            <div class="artist-info">
               <ul>
-                <li>Name: <%= @artist.first_name%> <%=@artist.last_name%></li>
-                <li>Age: <%= @artist.age%></li>
+                <li>Location: <%=@artist.address%></li>
                 <li>Phone Number: <%=@artist.phone_number%></li>
               </ul>
-      </div>
-        <div class="col-xs-12 col-sm-6">
-                <ul>
-                  <li>Location: <%=@artist.address%></li>
-                  <li>Height: <%=@artist.height%></li>
-                  <li>Shoe Size: <%=@artist.shoe_size%></li>
-                </ul>
+            </div>
+          <% elsif index == 2 %>
+          <div class="artist-info">
+            <ul>
+              <li>Age: <%= @artist.age%></li>
+              <li>Height: <%=@artist.height%></li>
+              <li>Shoe Size: <%=@artist.shoe_size%></li>
+            </ul>
+          </div>
+          <% end %>
         </div>
-
-        <div class="row">
-            <p>Dynamic form here</p>
-        </div>
+        <% end %>
       </div>
       <div class="row">
+        <div class="col-xs-12">
         <p>map here</p>
+        </div>
       </div>
-
     </div>
+  </div>
 </div>
-
