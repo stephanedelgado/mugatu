@@ -6,6 +6,9 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
   has_many :artists
   has_many :bookings
+
+  has_many :requests, through: :artists, source: :bookings
+
   has_attachment :avatar
   after_create :send_welcome_mail
 
@@ -30,6 +33,10 @@ class User < ApplicationRecord
 
     return user
   end
+
+  # def requests
+  #   self.artists.map { |artist| artist.bookings }.flatten
+  # end
 
   private
 
