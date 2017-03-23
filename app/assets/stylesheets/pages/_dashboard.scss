@@ -1,3 +1,46 @@
+.tabs {
+  background: #53443F;
+  display: flex;
+}
+.tabs a {
+  color: white;
+}
+.tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.tab {
+  background: #756A66;
+  flex: 0 0 50%;
+  text-align: center;
+  padding: 20px 0;
+  opacity: 0.6;
+}
+.tab.active {
+  opacity: 1;
+}
+.container-cards {
+
+}
+
+.wrapper.dashboard {
+  margin-top:40px;
+}
+
+.container-profile {
+  text-align: center;
+  padding: 50px;
+  background: white;
+  border-radius:7px;
+}
+.container-profile img {
+  width:100px;
+  border-radius:50%;
+}
+
+
+
 .card-link a {
   z-index: 98;
 }

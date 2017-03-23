@@ -8,6 +8,9 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+  & a {
+    text-decoration: none;
+  }
 }
 
 /*.navbar-wagon.home-page {

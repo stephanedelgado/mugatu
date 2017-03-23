@@ -1,49 +1,70 @@
-<div class="wrapper">
-  <div class="container form-container">
-  <h1 class="text-center"><%= current_user.first_name %></h1>
+<div class="wrapper dashboard">
+  <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 text-center">
-      <h2>My Artists</h2>
-        <% current_user.artists.each do |artist| %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(artist.photos.first.path) %>);">
-            <div class="card-category"><h3 class="dashboard_artist_name"><%= artist.first_name %></h3></div>
-            <div class="card-description"></div>
-            <%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, artist_path(artist), method: :delete, class:"icon delete" %>
-            <%= link_to "<i class='fa fa-pencil-square-o' aria-hidden='true'></i>".html_safe, edit_artist_path(artist), class:"icon edit" %>
-            <%= link_to "".html_safe, artist_path(artist), class:"card-link"%>
+      <div class="col-md-3">
+        <!-- USER PROFILE -->
+        <div class="container-profile">
+          <div>
+            <%= cl_image_tag current_user.avatar.path, height: "100", width: "100" %>
           </div>
-        <% end %>
-
+          <div>
+            <%= current_user.first_name %>
+          </div>
+        </div>
       </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-        <h2>Bookings</h2>
-      </div>
-      <div>
-        <table class="booking-table">
-          <tbody>
-            <tr>
-              <th>Status</th>
-              <th>Dates</th>
-              <th>Location</th>
-              <th>Artist</th>
-              <th>Details</th>
-            </tr>
 
-            </tr>
-            <% current_user.bookings.each do |booking|%>
-            <tr>
-              <td> <%= booking.status %> </td>
-              <td> <%= booking.start_time %> </td>
-              <td> <%= booking.end_time %> </td>
-              <% artist = booking.artist%>
-              <td><%= cl_image_tag artist.photos.first.path %></td>
-            <% end %>
-
-            </tr>
-          </tbody>
-        </table>
+      <div class="col-md-9" style="background-color:lightblue;height:600px">
+        <!-- USER DASHBOARD -->
+        <div class="container-dashboard">
+          <div class="tabs">
+            <!-- TWO TABS -->
+            <a class="tab active" data-target="#my-artists">My Artists</a>
+            <a class="tab" data-target="#my-bookings">My Bookings</a>
+          </div>
+          <!-- ARTISTS-CARDS -->
+          <div class="container-cards tab-content" id="my-artists">
+              <% current_user.artists.each do |artist| %>
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(artist.photos.first.path) %>);">
+                  <div class="card-category"><h3 class="dashboard_artist_name"><%= artist.first_name %></h3></div>
+                  <div class="card-description"></div>
+                  <%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, artist_path(artist), method: :delete, class:"icon delete" %>
+                  <%= link_to "<i class='fa fa-pencil-square-o' aria-hidden='true'></i>".html_safe, edit_artist_path(artist), class:"icon edit" %>
+                  <%= link_to "".html_safe, artist_path(artist), class:"card-link"%>
+                </div>
+              <% end %>
+          </div>
+          <!-- BOOKING TABLE -->
+          <div class="tab-content hidden" id="my-bookings" >
+            <div>
+              <table class="booking-table">
+                <tbody>
+                  <tr>
+                    <th>Status</th>
+                    <th>Dates</th>
+                    <th>Location</th>
+                    <th>Artist</th>
+                    <th>Details</th>
+                  </tr>
+                  <tr>
+                  <% current_user.bookings.each do |booking|%>
+                    <td> <%= booking.status %> </td>
+                    <td> <%= booking.start_time %> </td>
+                    <td> <%= booking.end_time %> </td>
+                    <% artist = booking.artist%>
+                    <td><%= cl_image_tag artist.photos.first.path %></td>
+                  <% end %>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
 
