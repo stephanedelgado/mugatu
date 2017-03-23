@@ -41,6 +41,15 @@ ul {
   margin: 10px 30px;
 }
 
+.site{
+  display:flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content{
+  flex:1;
+}
 
 
 

@@ -9,13 +9,14 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
-  <body>
+  <body class="site">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <main class="site-content">
     <%= yield %>
-
+    </main>
 
 
     <%= render 'shared/footer' %>
