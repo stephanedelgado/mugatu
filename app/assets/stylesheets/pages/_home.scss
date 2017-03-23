@@ -7,11 +7,27 @@
   background-color: $light_grey;
 }
 
-.wrapper-cta {
+.wrapper_cta {
   background-color: $purple;
-  height: 200px;
   padding:50px;
   color: white;
+  .btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 150px #000000;
+    transition: 0.7s ease-in;
+  }
+}
+
+.call_to_action{
+  width: 130px;
+  padding: 10px 10px;
+  background-color: white;
+  margin: 0 auto;
+  text-align: center;
+  h2{
+    margin: 30px 30px;
+  }
+
 }
 
 
@@ -57,6 +73,8 @@ body {
   font-size: 15px;
 }
 .search-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -120,3 +138,4 @@ body {
 .form {
   color: white;
 }
+
