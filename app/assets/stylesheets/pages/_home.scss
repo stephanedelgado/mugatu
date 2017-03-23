@@ -7,6 +7,15 @@
   background-color: $light_grey;
 }
 
+.wrapper-cta {
+  background-color: $purple;
+  height: 200px;
+  padding:50px;
+  color: white;
+}
+
+
+
 .alert, .notice {
   background-color: $light_grey;
   margin: 0 auto;
@@ -14,7 +23,6 @@
 html, body {
   height:100%;
 }
-
 
 .banner {
   color: white;
@@ -26,6 +34,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: left;
+  padding: 20px;
 }
 .banner h1 {
   font-size: 50px;
@@ -38,7 +47,6 @@ html, body {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
 }
-
 
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 
