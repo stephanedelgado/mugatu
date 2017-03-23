@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20170322033445) do
     t.string   "address"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string   "status"
+    t.string   "status"      default: "pending"
     t.integer  "artist_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
