@@ -1,0 +1,57 @@
+html,body{
+  height: 100%
+}
+
+h1{
+  padding-left: 20px;
+  padding-top: 20px
+}
+
+.wrapper, .wrapperindex{
+background-color: $light_grey;
+}
+
+
+#left-column {
+  float: left
+
+}
+
+
+.parent {
+  display: flex;
+  height: 100vh;
+  padding-top: 38px;
+}
+
+
+.left {
+  flex: 1;
+  overflow: scroll;
+  background-color: #FFFFFF
+}
+
+.right {
+  flex: 1;
+}
+
+@media (max-width: $screen-sm-min) {
+  .parent {
+    display: initial;
+  }
+  .right {
+    flex: initial;
+    #map {
+      height: 50vh !important;
+    }
+  }
+}
+
+
+.container-fluid{
+  max-width: 1000px;
+  background: white;
+}
+.card-image img {
+  max-height: 300px;
+}
