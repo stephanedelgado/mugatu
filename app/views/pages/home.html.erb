@@ -22,7 +22,7 @@
             <div class="card">
               <div class="card-image">
                 <% if artist.photos.any? %>
-                <%= cl_image_tag artist.photos[0].path, height: 200, crop: :thumb %>
+                <%= cl_image_tag artist.photos[0].path%>
                 <% end %>
               </div>
               <div class="card-name">
