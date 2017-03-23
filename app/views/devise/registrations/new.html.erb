@@ -11,7 +11,6 @@
       <%= f.input :role, required: true %>
       <%= f.input :email, required: true %>
       <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-      <%= f.input %>
       <%= f.input :password_confirmation, required: true %>
     </div>
 

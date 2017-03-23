@@ -3,7 +3,7 @@
     <p>Models are everywhere, find them</p>
     <div class="container search-wrapper">
       <form action="<%= artists_path %>" autocomplete="on">
-        <input id="search" name="search" type="text" placeholder="Search Now">
+        <input id="search" name="search" type="text" placeholder="Search Now" autofocus>
         <button id="search_submit">
           <i class="fa fa-search"></i>
         </button>
@@ -22,7 +22,7 @@
             <div class="card">
               <div class="card-image">
                 <% if artist.photos.any? %>
-                <%= cl_image_tag artist.photos[0].path %>
+                <%= cl_image_tag artist.photos[0].path%>
                 <% end %>
               </div>
               <div class="card-name">
