@@ -52,6 +52,7 @@ class ArtistsController < ApplicationController
   def update
     @artist = Artist.find(params[:id])
     @artist.update(artist_params)
+    p params[:photos]
     @artist.save
     redirect_to dashboard_path
   end
@@ -85,6 +86,7 @@ class ArtistsController < ApplicationController
                                     :gender,
                                     :phone_number,
                                     :address,
+                                    :city,
                                     :height,
                                     :shoe_size,
                                     :daily_rate,
