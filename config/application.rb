@@ -18,6 +18,9 @@ Bundler.require(*Rails.groups)
 
 module Mugatu
   class Application < Rails::Application
+
+    config.autoload_paths += Dir[Rails.root.join('app', 'services', '*')]
+
     config.generators do |generate|
       generate.assets false
     end

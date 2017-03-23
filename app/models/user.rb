@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
   has_attachment :avatar
+  after_create :send_welcome_mail
+
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
@@ -24,13 +26,13 @@ class User < ApplicationRecord
       user.save
     end
 
-
-    # if user.auth.slice
-    #   show facebook_picture_url
-    # else
-    #   show nil
-
     return user
+  end
+
+  private
+
+  def send_welcome_mail
+    UserMailer.welcome(self).deliver_now
   end
 
 end
