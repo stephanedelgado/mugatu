@@ -6,7 +6,11 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
   has_many :artists
   has_many :bookings
+
+  has_many :requests, through: :artists, source: :bookings
+
   has_attachment :avatar
+  after_create :send_welcome_mail
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -27,13 +31,17 @@ class User < ApplicationRecord
       user.save
     end
 
-
-    # if user.auth.slice
-    #   show facebook_picture_url
-    # else
-    #   show nil
-
     return user
+  end
+
+  # def requests
+  #   self.artists.map { |artist| artist.bookings }.flatten
+  # end
+
+  private
+
+  def send_welcome_mail
+    UserMailer.welcome(self).deliver_now
   end
 
 end

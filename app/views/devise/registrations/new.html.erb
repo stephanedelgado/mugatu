@@ -13,6 +13,8 @@
       <%= f.input :avatar, as: :attachinary %>
       <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
       <%= f.input :password_confirmation, required: true %>
+      <%= check_box_tag :optin %>
+      <p>Subscribe to our newsletter</p>
     </div>
     <div class="form-actions">
       <%= f.button :submit, "Sign up", class: "btn btn-outline-primary btn-lg btn-block" %>

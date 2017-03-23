@@ -11,9 +11,6 @@
 //= require bootstrap-datepicker
 //= require_tree .
 
-// $('.carousel').carousel({
-//   interval: 2000
-// })
 
 $('.input-daterange').datepicker({
 });

@@ -20,6 +20,8 @@
 }
 html, body {
   height:100%;
+  position: relative
+
 }
 
 .banner {
@@ -49,7 +51,7 @@ html, body {
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 
 body {
-  background: #DDD;
+  background:$light_grey;
   font-size: 15px;
 }
 .search-wrapper {
