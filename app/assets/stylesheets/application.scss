@@ -15,7 +15,6 @@
 @import "pages/index";
 @import "devise/index";
 
-
 .wrapper {
   background-color: $light_grey;
   padding: 38px 0px;
@@ -37,7 +36,7 @@ ul {
   padding-left: 0px;
 }
 
-.header{
+.header {
   margin: 10px 30px;
 }
 
@@ -50,6 +49,3 @@ ul {
 .site-content{
   flex:1;
 }
-
-
-
