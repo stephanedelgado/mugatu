@@ -1,34 +1,3 @@
 @import "home";
 @import "dashboard";
-
-
-
-// .wrapper, wrapperindex {
-//   height: 500px;
-//   width: 500px
-// }
-
-html,body{
-  height: 100%
-}
-
-.wrapper, .wrapperindex{
-background-color: $light_grey;
-}
-
-#left-column {
-  float: left
-}
-
-#right-column {
-  float: right
-}
-
-.container-fluid{
-  max-width: 1000px;
-  background: white;
-}
-.card-image img {
-  max-height: 300px;
-  max-width: 80%;
-}
+@import "artists";
