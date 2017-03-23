@@ -7,6 +7,15 @@
   background-color: $light_grey;
 }
 
+.wrapper-cta {
+  background-color: $purple;
+  height: 200px;
+  padding:50px;
+  color: white;
+}
+
+
+
 .alert, .notice {
   background-color: $light_grey;
   margin: 0 auto;
@@ -14,7 +23,6 @@
 html, body {
   height:100%;
 }
-
 
 .banner {
   color: white;
@@ -26,6 +34,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: left;
+  padding: 20px;
 }
 .banner h1 {
   font-size: 50px;
@@ -39,9 +48,7 @@ html, body {
   margin-bottom: 20px;
 }
 
-
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
-@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
 
 body {
   background: #DDD;
