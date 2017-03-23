@@ -1,51 +1,53 @@
     <div>
-      <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="row">
-          <% @artists.each do |artist| %>
-            <div class="col-xs-12 col-sm-6">
-
-              <div class="card">
-                <div class="card-image">
-                <% if artist.photos.any? %>
-                  <%= cl_image_tag artist.photos[0].path %>
-                <% end %>
+      <div class="parent">
+        <div class="left">
+          <div class="container-fluid">
+            <div class="row">
+            <% @artists.each do |artist| %>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="text-center">
+                <div class="card">
+                  <div class="card-image">
+                  <% if artist.photos.any? %>
+                    <%= cl_image_tag artist.photos[0].path %>
+                  <% end %>
+                  </div>
+                  <div class="card-name">
+                    <h2><%= artist.first_name %> <%= artist.last_name %></h2>
+                    <p><%= artist.age %>yr</p>
+                    <p><%= artist.height %>cm</p>
+                    <p>rate $<%= artist.daily_rate %></p>
+                    <p><%= artist.address %></p>
+                  </div>
+                  <%= link_to "", artist_path(artist), class: "card-link" %>
                 </div>
-                <div class="card-name">
-                  <h2><%= artist.first_name %> <%= artist.last_name %></h2>
-                  <p><%= artist.age %>yr</p>
-                  <p><%= artist.height %>cm</p>
-                  <p>rate $<%= artist.daily_rate %></p>
-                  <p><%= artist.address %></p>
-                </div>
-                <%= link_to "", artist_path(artist), class: "card-link" %>
               </div>
             </div>
-          <% end %>
+            <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="right hidden-xs">
+            <div style="height: 100vh; width: 100%;">
+              <div id="map" style="width: 100%; height: 100vh; right: 0;"></div>
+            </div>
+            <% content_for(:after_js) do %>
+              <%= javascript_tag do %>
+                $(document).ready(function() {
+                  var handler = Gmaps.build('Google');
+                  handler.buildMap({ internal: { id: 'map' } }, function() {
+                    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+                    handler.bounds.extendWith(markers);
+                    handler.fitMapToBounds();
+                    if (markers.length == 0) {
+                      handler.getMap().setZoom(2);
+                    } else if (markers.length == 1) {
+                      handler.getMap().setZoom(14);
+                    }
+                  });
+                });
+              <% end %>
+            <% end %>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6" >
-          <div style="height: 100vh; width: 100%;">
-            <div id="map" style="width: 100%; height: 100vh; right: 0;"></div>
-          </div>
-          <% content_for(:after_js) do %>
-            <%= javascript_tag do %>
-              $(document).ready(function() {
-                var handler = Gmaps.build('Google');
-                handler.buildMap({ internal: { id: 'map' } }, function() {
-                  markers = handler.addMarkers(<%= raw @hash.to_json %>);
-                  handler.bounds.extendWith(markers);
-                  handler.fitMapToBounds();
-                  if (markers.length == 0) {
-                    handler.getMap().setZoom(2);
-                  } else if (markers.length == 1) {
-                    handler.getMap().setZoom(14);
-                  }
-                });
-              });
-            <% end %>
-          <% end %>
-      </div>
-      </div>
     </div>
-

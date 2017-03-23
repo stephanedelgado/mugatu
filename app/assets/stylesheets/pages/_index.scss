@@ -17,14 +17,21 @@ background-color: #ffffff
 }
 
 
-#left-column {
-  float: left
+
+.parent {
+  display: flex;
+  height: 100vh;
+  padding-top: 38px;
 }
 
-#right-column {
-  float: right
+.left {
+  flex: 1;
+  overflow: scroll;
 }
 
+.right {
+  flex: 1;
+}
 
 .container-fluid{
   max-width: 1000px;
@@ -32,5 +39,4 @@ background-color: #ffffff
 }
 .card-image img {
   max-height: 300px;
-  max-width: 80%;
 }
