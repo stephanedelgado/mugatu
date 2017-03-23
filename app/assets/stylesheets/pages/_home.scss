@@ -25,7 +25,7 @@ html, body {
   background-size: cover !important;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 }
 .banner h1 {
   font-size: 50px;
@@ -49,22 +49,20 @@ body {
 }
 .search-wrapper {
   position: relative;
-  width: 600px;
 }
 
 #search {
   height: 60px;
-  font-size: 55px;
+  font-size: 36px;
   display: inline-block;
-  font-family: "Lato";
   font-weight: 100;
   border: none;
   outline: none;
   color: #555;
   padding: 3px;
   padding-right: 60px;
-  width: 0px;
   position: absolute;
+  width: 100%;
   top: 0;
   right: 0;
   background: none;
@@ -72,15 +70,15 @@ body {
   transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
   cursor: pointer;
   color: white;
+  border-bottom: 1px solid #BBB;
 }
 
 #search:focus:hover {
-  border-bottom: 1px solid #BBB;
   color: white;
 }
 
 #search:focus {
-  width: 600px;
+  width: 100%;
   color: white;
   z-index: 1;
   border-bottom: 1px solid #BBB;
@@ -89,10 +87,9 @@ body {
 #search_submit {
   outline: none;
   height: 67px;
-  width: 63px;
   display: inline-block;
   color: white;
-  font-size: 3em;
+  font-size: 36px;
   background: transparent;
   border: none;
   position: absolute;

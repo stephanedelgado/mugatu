@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.where.not(latitude: nil, longitude: nil)
-
+    @search = params[:search]
       if params[:search]
         @artists = @artists.near(params[:search], 100).order("created_at DESC")
       else
@@ -52,6 +52,7 @@ class ArtistsController < ApplicationController
   def update
     @artist = Artist.find(params[:id])
     @artist.update(artist_params)
+    p params[:photos]
     @artist.save
     redirect_to dashboard_path
   end
@@ -85,6 +86,7 @@ class ArtistsController < ApplicationController
                                     :gender,
                                     :phone_number,
                                     :address,
+                                    :city,
                                     :height,
                                     :shoe_size,
                                     :daily_rate,

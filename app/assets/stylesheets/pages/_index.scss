@@ -13,9 +13,14 @@ html,body{
 }
 
 .wrapper, .wrapperindex{
-background-color: #ffffff
+background-color: $light_grey;
 }
 
+
+#left-column {
+  float: left
+
+}
 
 
 .parent {
@@ -23,6 +28,7 @@ background-color: #ffffff
   height: 100vh;
   padding-top: 38px;
 }
+
 
 .left {
   flex: 1;
