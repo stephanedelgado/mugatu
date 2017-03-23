@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
+  has_many :artists
+  has_many :bookings
   has_attachment :avatar
   after_create :send_welcome_mail
 

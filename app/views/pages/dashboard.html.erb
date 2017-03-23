@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 text-center">
       <h2>My Artists</h2>
-        <% @user_artists.each do |artist| %>
+        <% current_user.artists.each do |artist| %>
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(artist.photos.first.path) %>);">
             <div class="card-category"><h3 class="dashboard_artist_name"><%= artist.first_name %></h3></div>
             <div class="card-description"></div>
@@ -17,13 +17,31 @@
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
         <h2>Bookings</h2>
-        <ol class="bookings text-left">
-          <li>booking</li>
-          <li>booking</li>
-          <li>booking</li>
-          <li>booking</li>
-          <li>booking</li>
-        </ol>
+      </div>
+      <div>
+        <table class="booking-table">
+          <tbody>
+            <tr>
+              <th>Status</th>
+              <th>Dates</th>
+              <th>Location</th>
+              <th>Artist</th>
+              <th>Details</th>
+            </tr>
+
+            </tr>
+            <% current_user.bookings.each do |booking|%>
+            <tr>
+              <td> <%= booking.status %> </td>
+              <td> <%= booking.start_time %> </td>
+              <td> <%= booking.end_time %> </td>
+              <% artist = booking.artist%>
+              <td><%= cl_image_tag artist.photos.first.path %></td>
+            <% end %>
+
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
