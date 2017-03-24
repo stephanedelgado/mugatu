@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class="wrapper_cta">
+
   <div class="container text-center">
     <div class="sub_wrapper">
       <h2>Join our network and connect with models around the world</h2>
@@ -33,7 +33,7 @@
             <div class="card">
               <div class="card-image">
                 <% if artist.photos.any? %>
-                <%= cl_image_tag artist.photos[0].path%>
+                <%= cl_image_tag artist.photos[0].path, height: "300", width: "200", crop: :fill %>
                 <% end %>
               </div>
               <div class="card-name">
@@ -46,6 +46,26 @@
         </div>
       <% end %>
     </div>
+  </div>
+</div>
+
+<div class="calltoaction">
+  <div class="whitecard text-center">
+    <h2>I'M LOOKING FOR...</h2>
+    <h1>AVAILABLE MODELS ANYWHERE</h1>
+      <div class="circlecontainer">
+        <div class="row text-center">
+          <div class="col-xs-6 text-center">
+            <div class="circle1"><a href="#">YES</a>
+            </div>
+          </div>
+          <div class="col-xs-6 text-center">
+            <div class="circle2"><%= link_to "SIGN UP", new_user_session_path %></div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="imagebackground hidden-xs" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'catwalk.jpg' %>);">
   </div>
 </div>
 
