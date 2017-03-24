@@ -1,22 +1,23 @@
 <div class="wrapper dashboard">
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+
         <!-- USER PROFILE -->
+      <div class="col-md-3">
         <div class="container-profile">
           <div>
           <%= avatar_tag(100, 100)%>
           </div>
-          <div>
+          <div class="profile-name">
             <h3><%= current_user.first_name %></h3>
           </div>
           <div>
-            <%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-danger btn-lg btn-block" %>
+            <%= link_to "Edit", edit_user_registration_path, class: "btn-yours" %>
           </div>
         </div>
       </div>
 
-      <div class="col-md-9" style="background-color:lightblue;height:600px">
+      <div class="col-md-9" style="background-color:white; height:600px">
         <!-- USER DASHBOARD -->
         <div class="container-dashboard">
           <div class="tabs">
@@ -28,18 +29,16 @@
           <!-- ARTISTS-CARDS -->
           <div class="container-cards tab-content" id="my-artists">
             <% current_user.artists.each do |artist| %>
-            <div class="card">
-                <div class="card-image"><%= cl_image_tag artist.photos.first.path, width: 150 %></div>
-                <div class="card-category"><h3><%= artist.first_name %></h3></div>
-                <div class="card-buttons">
-                <%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, artist_path(artist), method: :delete, class:"icon delete" %>
-                <%= link_to "<i class='fa fa-pencil-square-o' aria-hidden='true'></i>".html_safe, edit_artist_path(artist), class:"icon edit" %>
-<!--                 <%= link_to "".html_safe, artist_path(artist), class:"card-link"%>
- -->                </div>
+            <div class="dash_card">
+              <div class="dash_card-image"><%= cl_image_tag artist.photos.first.path, width: 150 %></div>
+              <div class="dash_card-category"><h3><%= artist.first_name %></h3></div>
+              <div class="dash_card-buttons text-center">
+              <%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, artist_path(artist), method: :delete, class:"icon delete" %>
+              <%= link_to "<i class='fa fa-pencil-square-o' aria-hidden='true'></i>".html_safe, edit_artist_path(artist), class:"icon edit" %>
+             </div>
             </div>
-          </div>
             <% end %>
-        </div>
+          </div>
           <!-- BOOKING TABLE -->
           <div class="tab-content hidden" id="my-bookings" >
             <div>
@@ -118,8 +117,8 @@
           </div>
           </div>
         </div>
-      </div>
 
     </div>
   </div>
+</div>
 </div>
