@@ -15,6 +15,7 @@
                 </div>
 
                 <div class="mobile_booking hidden-md hidden-lg">
+                <div class="booking_button_mobile"></div>
                 <button class="booking_button_mobile" data-toggle="modal" data-target="modal_booking"> Book <%= @artist.first_name %></button>
                   <div class="modal fade" id="modal_booking" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -28,8 +29,14 @@
             </div>
           <% elsif index == 1 %>
             <div class="artist-info">
+
               <ul class="info">
                 <li>Location: <%=@artist.address%></li>
+
+              <ul>
+                <li>City of residence: <%= @artist.city %></li>
+                <li></li>
+
                 <li>Phone Number: <%=@artist.phone_number%></li>
               </ul>
             </div>
