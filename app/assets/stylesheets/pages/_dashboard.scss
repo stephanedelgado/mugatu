@@ -2,17 +2,14 @@
   background: #53443F;
   display: flex;
 }
-
 .tabs a {
   color: white;
 }
-
 .tabs a:hover {
   cursor: pointer;
   text-decoration: none;
   opacity: 0.8;
 }
-
 .tab {
   background: $purple;
   flex: 0 0 33.3%;
@@ -20,13 +17,16 @@
   padding: 20px 0;
   opacity: 0.6;
 }
-
 .tab.active {
   opacity: 1;
 }
 
 .booking-image {
   width: auto;
+}
+
+.profile-name {
+  margin-bottom: 50px;
 }
 
 .container-cards {
@@ -53,15 +53,25 @@
 .card-link a {
   z-index: 98;
 }
-
-.card {
+.dash_card {
   display: flex;
 }
-
+.dash_card-image {
+  flex: 1;
+}
+.dash_card-category {
+  flex: 1;
+  & h3 {
+    margin-top: 0px;
+  }
+}
+.dash_card-buttons {
+  flex: 1;
+}
 .card .icon {
   color: white;
   color: black;
-  :hover{
+  :hover {
     color: red;
   }
 }
@@ -78,7 +88,53 @@
 .bookings li{
   margin-top: 20px;
 }
-
-.dashboard_artist_name {
-  color: white;
+.btn-mugatu {
+  border-radius: 50px;
+  color: grey;
+  border-color: grey;
+  background-color: red;
+  padding: 12px 27px;
+  text-decoration: none;
+  & :hover {
+    text-decoration: none;
+  }
 }
+
+.btn-yours {
+  color: grey;
+  font-weight: lighter;
+  border: 1px solid grey;
+  padding: 15px 35px;
+  border-radius: 50px;
+  opacity: 0.8;
+  &:hover {
+  opacity: 1;
+  }
+}
+
+.btn-small {
+  background: #6AD58B;
+  color: white;
+  opacity: 0.8;
+  font-weight: bold;
+  padding: 10px 10px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  margin-top:55px;
+  font-family:300;
+}
+
+.btn-one-sm {
+  padding: 7px 20px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 50px;
+  background: #FD7265;
+  color: white;
+  opacity: 0.6;
+  transition: background 0.3s ease;
+  margin-top:10px;
+  border: 1px solid #FD7265;
+  display: inline-block;
+}
+
