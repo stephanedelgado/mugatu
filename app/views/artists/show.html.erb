@@ -29,9 +29,14 @@
             </div>
           <% elsif index == 1 %>
             <div class="artist-info">
+
+              <ul class="info">
+                <li>Location: <%=@artist.address%></li>
+
               <ul>
                 <li>City of residence: <%= @artist.city %></li>
                 <li></li>
+
                 <li>Phone Number: <%=@artist.phone_number%></li>
               </ul>
             </div>
