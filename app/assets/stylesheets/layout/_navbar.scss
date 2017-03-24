@@ -1,5 +1,6 @@
 /* Main class */
 .navbar-wagon {
+  z-index: 100;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
   transition: all 0.3s ease;
@@ -22,7 +23,7 @@
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 1;
+  z-index: 100;
   width: 100%;
 }
 
@@ -89,7 +90,7 @@
   position: absolute;
   right: 14px;
   top: -2px;
-  z-index: 1;
+  z-index: 101;
 }
 .navbar-wagon-search-input {
   flex: 0 1 300px;
