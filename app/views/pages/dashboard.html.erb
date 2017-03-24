@@ -86,7 +86,7 @@
                     <tr class="booking-row">
                       <td> <%= request.status %> </td>
                       <td> <%= request.start_time %> </td>
-                      <td> <%= (request.start_time - request.end_time) / 36000 %> </td>
+                      <td> <%= (request.start_time - request.end_time) / 36000 %> hours </td>
                       <td><%= link_to request.artist.first_name, artist_path(request.artist)%></td>
                       <td>
                         <% if request.status =="pending" %>
