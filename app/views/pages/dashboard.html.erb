@@ -70,6 +70,51 @@
           </div>
             <!-- MY REQUESTS -->
           <div class="tab-content hidden" id="my-requests" >
+          <div>
+            <table class="table booking-table">
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>When</th>
+                    <th>Time</th>
+                    <th>Artist</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% current_user.requests.each do |request|%>
+                    <tr class="booking-row">
+                      <td> <%= request.status %> </td>
+                      <td> <%= request.start_time %> </td>
+                      <td> <%= (request.start_time - request.end_time) / 36000 %> hours </td>
+                      <td><%= link_to request.artist.first_name, artist_path(request.artist)%></td>
+                      <td>
+                        <% if request.status =="pending" %>
+                        <ul class="accept_reject">
+                          <li>
+
+                          <%= simple_form_for ([request.artist, request]) do |f| %>
+                          <%= f.input :status,  input_html: {value: 'accepted'}, as: :hidden %>
+                          <%= f.submit "Accept", method: :patch %>
+                          <% end %>
+                          </li>
+                          <li>
+                          <%= simple_form_for ([request.artist, request]) do |f| %>
+                          <%= f.input :status,  input_html: {value: 'rejected'}, as: :hidden %>
+                          <%= f.submit "Reject", method: :patch %>
+                          <% end %>
+                          </li>
+                        </ul>
+                        <% else %>
+                        <p> - </p>
+                        <% end %>
+                      </td>
+                    </tr>
+
+                  <% end %>
+                </tbody>
+              </table>
+          </div>
           </div>
         </div>
 
