@@ -7,11 +7,12 @@
           <% if index == 0 %>
             <div class="artist-info">
               <h1><%=@artist.first_name%> <%= @artist.last_name%></h1>
-              <div class="booking-form text-center">
-              <p><%= @artist.first_name %>'s daily rate: <%= @artist.daily_rate %></p>
-              <%= render 'shared/booking_form' %>
-
-              </div>
+                <div class="booking_form_wrapper text-center">
+                <h3><%= @artist.first_name %>'s daily rate: <%= @artist.daily_rate %></h3>
+                  <div class="booking_form">
+                  <%= render 'shared/booking_form' %>
+                  </div>
+                </div>
             </div>
           <% elsif index == 1 %>
             <div class="artist-info">
