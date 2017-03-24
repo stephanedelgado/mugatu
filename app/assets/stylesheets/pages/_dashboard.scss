@@ -14,8 +14,8 @@
 }
 
 .tab {
-  background: #756A66;
-  flex: 0 0 50%;
+  background: $purple;
+  flex: 0 0 33.3%;
   text-align: center;
   padding: 20px 0;
   opacity: 0.6;
@@ -23,6 +23,10 @@
 
 .tab.active {
   opacity: 1;
+}
+
+.booking-image {
+  width: auto;
 }
 
 .container-cards {
@@ -38,6 +42,7 @@
   padding: 50px;
   background: white;
   border-radius:7px;
+  margin-right: 20px;
 }
 
 .container-profile img {
@@ -49,10 +54,12 @@
   z-index: 98;
 }
 
+.card {
+  display: flex;
+}
+
 .card .icon {
   color: white;
-  position: absolute;
-  z-index: 99;
   color: black;
   :hover{
     color: red;
