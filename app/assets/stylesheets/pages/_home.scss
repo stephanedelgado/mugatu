@@ -16,6 +16,7 @@
     box-shadow: 0px 0px 150px #000000;
     transition: 0.7s ease-in;
   }
+ }
 
 .call_to_action{
   width: 130px;
@@ -33,6 +34,7 @@
   background-color: $light_grey;
   margin: 0 auto;
 }
+
 html, body {
   height:100%;
   position: relative;
@@ -50,11 +52,13 @@ html, body {
   justify-content: left;
   padding: 20px;
 }
+
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
+
 .banner p {
   font-size: 20px;
   font-weight: lighter;
@@ -68,6 +72,7 @@ body {
   background:$light_grey;
   font-size: 15px;
 }
+
 .search-wrapper {
   max-width: 400px;
   margin: 0 auto;
@@ -107,6 +112,7 @@ body {
   border-bottom: 1px solid #BBB;
   cursor: text;
 }
+
 #search_submit {
   outline: none;
   height: 67px;
@@ -134,7 +140,6 @@ body {
 .form {
   color: white;
 }
-
 
 .calltoaction {
  display: flex;
@@ -180,6 +185,7 @@ body {
   display: flex;
   justify-content: center
 }
+
 .center-block {
   margin-left: auto;
   margin-right: auto;
@@ -205,7 +211,6 @@ body {
   }
 }
 
-
 .circle2{
   vertical-align: middle;
   width: 100px;
@@ -226,5 +231,4 @@ body {
    margin: 0 auto;
    letter-spacing: 0.7;
   }
-
 }
