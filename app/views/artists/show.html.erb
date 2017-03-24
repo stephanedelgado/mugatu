@@ -7,10 +7,22 @@
           <% if index == 0 %>
             <div class="artist-info">
               <h1><%=@artist.first_name%> <%= @artist.last_name%></h1>
-                <div class="booking_form_wrapper text-center">
-                <h3><%= @artist.first_name %>'s daily rate: <%= @artist.daily_rate %></h3>
+                <div class="booking_form_wrapper text-center hidden-xs">
+                <h3><%= @artist.first_name %>'s daily rate: <%= @artist.daily_rate %> USD </h3>
                   <div class="booking_form">
                   <%= render 'shared/booking_form' %>
+                  </div>
+                </div>
+
+                <div class="mobile_booking hidden-md hidden-lg">
+                <button class="booking_button_mobile" data-toggle="modal" data-target="modal_booking"> Book <%= @artist.first_name %></button>
+                  <div class="modal fade" id="modal_booking" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <div class="modal">
+                      <%= render 'shared/booking_form' %>
+                      </div>
+                    </div>
                   </div>
                 </div>
             </div>

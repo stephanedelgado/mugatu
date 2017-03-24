@@ -8,7 +8,9 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
+//= require moment
 //= require bootstrap-datepicker
+//= require bootstrap-datetimepicker
 //= require_tree .
 
 
@@ -25,4 +27,8 @@ $(function(){
     // Show target tab-content (use class="hidden")
     $($(this).data('target')).removeClass('hidden');
   });
+});
+
+$(function () {
+    $('.form_datetime').datetimepicker({ format: 'YYYY-MM-DD HH:mm' });
 });

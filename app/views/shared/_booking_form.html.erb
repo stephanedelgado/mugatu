@@ -1,8 +1,8 @@
 <div class="booking_form">
   <%= simple_form_for [@artist, @booking] do |f| %>
   <%= f.error_notification %>
-  <%= f.input :start_time %>
-  <%= f.input :end_time %>
+  <%= f.input :start_time, as: :date_time_picker %>
+  <%= f.input :end_time, as: :date_time_picker %>
   <%= f.submit class: "booking_button" %>
   <% end %>
 </div>

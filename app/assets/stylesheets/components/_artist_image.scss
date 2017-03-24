@@ -31,11 +31,13 @@
 .artist-info .booking_form_wrapper{
   z-index: 3;
   position:absolute;
+  max-width: 250px;
   right: 20px;
   bottom:20px;
   padding: 40px;
   background: rgba(255, 255, 255, 0.43);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: background 0.5s ease;
   border-radius: 7px;
   *{
     color: black;
@@ -46,8 +48,37 @@
     background: rgba(255, 255, 255, 0.85);
 }
 
-.artist-info .booking_form_wrapper{
-
+.artist-info .booking_form_wrapper .booking_button{
+  padding: 0 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  background-color: $purple;
+  color: white;
+  font-size: 14px;
+  border: 2px solid $purple;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
 }
 
+.artist-info .booking_form_wrapper .booking_button:hover{
+  box-shadow: 0 1px 3px rgba(0, 1, 0, 0.5);
+}
+.mobile_booking{
+  position:relative;
+}
+.booking_button_mobile{
+  z-index: 99;
+  position:fixed;
+  bottom: 10px;
+  width: 100%;
+  padding: 0 80px;
+  border-radius: 5px;
+  line-height: 40px;
+  background-color: $purple;
+  color: white;
+  font-size: 14px;
+  border: 2px solid $purple;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+}
 

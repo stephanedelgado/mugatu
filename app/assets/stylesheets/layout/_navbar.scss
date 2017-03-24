@@ -67,10 +67,10 @@
   border: 2px solid $purple;
 }
 .navbar-wagon-button:hover {
-  color: white;
-  background: $purple;
+  color: black;
+  font-weight: bold;
+  background: rgba(80, 76, 123, 0.56);
   border-color: $purple;
-  opacity: 0.1;
 }
 
 /* Navbar search form */
