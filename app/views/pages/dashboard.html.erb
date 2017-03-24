@@ -8,8 +8,10 @@
           <div>
           <%= avatar_tag(100, 100)%>
           </div>
-          <div class="profile-name">
+          <div class="profile-details">
             <h3><%= current_user.first_name %></h3>
+            <h3><%= current_user.last_name %></h3>
+            <p><%= current_user.email %></p>
           </div>
           <div>
             <%= link_to "Edit", edit_user_registration_path, class: "btn-yours" %>
@@ -31,7 +33,11 @@
             <% current_user.artists.each do |artist| %>
             <div class="dash_card">
               <div class="dash_card-image"><%= cl_image_tag artist.photos.first.path, width: 150 %></div>
-              <div class="dash_card-category"><h3><%= artist.first_name %></h3></div>
+              <div class="dash_card-category">
+              <h3><%= artist.first_name %> <%= artist.last_name %></h3>
+              <h4><%= artist.city %></h4>
+              <p>Age: <%= artist.age %></p>
+              </div>
               <div class="dash_card-buttons text-center">
               <%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, artist_path(artist), method: :delete, class:"icon delete" %>
               <%= link_to "<i class='fa fa-pencil-square-o' aria-hidden='true'></i>".html_safe, edit_artist_path(artist), class:"icon edit" %>
