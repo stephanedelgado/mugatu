@@ -55,18 +55,31 @@
 }
 .dash_card {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 .dash_card-image {
-  flex: 1;
 }
 .dash_card-category {
-  flex: 1;
-  & h3 {
+  text-align: left;
+  width: 80%;
+  padding-left: 20px;
+  h3 {
     margin-top: 0px;
   }
 }
 .dash_card-buttons {
-  flex: 1;
+  flex: 1 1 100px;
+  a {
+    font-size:35px;
+    padding:5px;
+    color: grey;
+    &:hover {
+      color:red;
+    }
+  }
+
 }
 .card .icon {
   color: white;

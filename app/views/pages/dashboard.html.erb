@@ -1,8 +1,9 @@
 <div class="wrapper dashboard">
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+
         <!-- USER PROFILE -->
+      <div class="col-md-3">
         <div class="container-profile">
           <div>
           <%= avatar_tag(100, 100)%>
@@ -29,17 +30,15 @@
           <div class="container-cards tab-content" id="my-artists">
             <% current_user.artists.each do |artist| %>
             <div class="dash_card">
-                <div class="dash_card-image"><%= cl_image_tag artist.photos.first.path, width: 150 %></div>
-                <div class="dash_card-category"><h3><%= artist.first_name %></h3></div>
-                <div class="dash_card-buttons">
-                <%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, artist_path(artist), method: :delete, class:"icon delete" %>
-                <%= link_to "<i class='fa fa-pencil-square-o' aria-hidden='true'></i>".html_safe, edit_artist_path(artist), class:"icon edit" %>
-<!--                 <%= link_to "".html_safe, artist_path(artist), class:"card-link"%>
- -->                </div>
+              <div class="dash_card-image"><%= cl_image_tag artist.photos.first.path, width: 150 %></div>
+              <div class="dash_card-category"><h3><%= artist.first_name %></h3></div>
+              <div class="dash_card-buttons text-center">
+              <%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, artist_path(artist), method: :delete, class:"icon delete" %>
+              <%= link_to "<i class='fa fa-pencil-square-o' aria-hidden='true'></i>".html_safe, edit_artist_path(artist), class:"icon edit" %>
+             </div>
             </div>
-          </div>
             <% end %>
-        </div>
+          </div>
           <!-- BOOKING TABLE -->
           <div class="tab-content hidden" id="my-bookings" >
             <div>
@@ -73,8 +72,8 @@
           <div class="tab-content hidden" id="my-requests" >
           </div>
         </div>
-      </div>
 
     </div>
   </div>
+</div>
 </div>
