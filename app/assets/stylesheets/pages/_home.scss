@@ -7,12 +7,35 @@
   background-color: $light_grey;
 }
 
+.wrapper_cta {
+  background-color: $purple;
+  padding:50px;
+  color: white;
+  .btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 150px #000000;
+    transition: 0.7s ease-in;
+  }
+
+.call_to_action{
+  width: 130px;
+  padding: 10px 10px;
+  background-color: white;
+  margin: 0 auto;
+  text-align: center;
+  h2{
+    margin: 30px 30px;
+  }
+
+}
+
 .alert, .notice {
   background-color: $light_grey;
   margin: 0 auto;
 }
 html, body {
   height:100%;
+  position: relative;
 }
 
 .banner {
@@ -42,10 +65,12 @@ html, body {
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 
 body {
-  background: #DDD;
+  background:$light_grey;
   font-size: 15px;
 }
 .search-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -109,6 +134,7 @@ body {
 .form {
   color: white;
 }
+
 
 .calltoaction {
  display: flex;
@@ -202,6 +228,3 @@ body {
   }
 
 }
-
-
-
