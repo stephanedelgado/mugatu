@@ -2,19 +2,55 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+ .backgroundcolor{
+  max-width: 0 auto;
+  background-color: #504C7B;
+  margin: 0 auto;
+  height: 150px;
+
+  h2{
+    color: #ffffff;
+    font-weight: lighter;
+    letter-spacing: 2;
+
+  }
+ }
+
+
+.backgroundcolor{
+    background-color: #504C7B;
+    margin: 0 auto;
+    height: 150px;
+}
 
 .wrapper {
   background-color: $light_grey;
+
 }
 
-.wrapper_cta {
-  background-color: $purple;
-  padding:50px;
-  color: white;
+.sub_wrapper {
+  text-decoration: none;
+  background-color: #504c7b;
+  margin: 0 auto;
+
+
+  a{
+    padding: 0 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    line-height: 40px;
+    background-color: #504c7b;
+    color: white;
+    font-size: 14px;
+    border: 2px solid #ffffff;
+    text-decoration: none;
+  }
+
+
   .btn:hover{
     transform: scale(1.05);
     box-shadow: 0px 0px 150px #000000;
-    transition: 0.7s ease-in;
+    transition: 0.4s ease-in;
   }
  }
 
