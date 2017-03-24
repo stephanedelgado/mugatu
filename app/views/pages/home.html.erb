@@ -1,8 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'banner.jpeg' %>);">
   <div class="banner-content container">
     <div class="row">
-      <div class="col-sm-7 col-xs-12"><h2 class="text-left">Find a model nearby</h2></div>
-      <div class="col-sm-5 col-xs-12 search-wrapper">
+      <div class="container"><h2>Find a model nearby</h2></div>
+      <div class="col-xs-12 ">
+      <div class="search-wrapper">
         <form action="<%= artists_path %>" autocomplete="on">
           <input id="search" name="search" type="text" placeholder="your city" autofocus>
           <button id="search_submit">
@@ -10,13 +11,17 @@
           </button>
         </form>
       </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="wrapper-cta">
-  <div class="container">
-    <p>here goes the call to action</p>
+<div class="wrapper_cta">
+  <div class="container text-center">
+    <div class="sub_wrapper">
+      <h2>Join our network and connect with models around the world</h2>
+        <%= link_to "Register Now", new_user_registration_path, class: "btn btn-default" %>
+      </div>
   </div>
 </div>
 
