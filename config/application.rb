@@ -20,7 +20,7 @@ module Mugatu
   class Application < Rails::Application
 
     config.autoload_paths += Dir[Rails.root.join('app', 'services', '*')]
-
+    config.action_view.embed_authenticity_token_in_remote_forms = true
     config.generators do |generate|
       generate.assets false
     end
