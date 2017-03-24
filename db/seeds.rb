@@ -28,7 +28,7 @@ artists_images = [
     last_name: Faker::Name.last_name,
     age: (18..35).to_a.sample,
     address:" ",
-    city: ["Hudson", "Tucson", "Shanghai", "Beijing", "Tokyo", "Milan", "London", "Paris", "Stockholm"],
+    city: ["Hudson", "Tucson", "Shanghai", "Beijing", "Tokyo", "Milan", "London", "Paris", "Stockholm"].sample,
     height: (175..195).to_a.sample,
     shoe_size: (36..45).to_a.sample,
     daily_rate: (36..45).to_a.sample,

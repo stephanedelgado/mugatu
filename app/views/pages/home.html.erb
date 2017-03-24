@@ -20,7 +20,7 @@
   <div class="container text-center">
     <div class="sub_wrapper">
     <h2>Join our network and connect with models around the world</h2>
-      <%= link_to "Register Now", new_user_registration_path, class: "btn" %>
+      <%= link_to "SIGN UP", new_user_registration_path, class: "btn" %>
     </div>
   </div>
 </div>
@@ -39,7 +39,7 @@
               <div class="card-name">
                 <h2><%= artist.first_name %> <%= artist.last_name %></h2>
                 <p>$<%= artist.daily_rate %></p>
-                <p class="small">LOCATION</p>
+                <p class="small"><%= artist.city %></p>
               </div>
               <%= link_to "", artist_path(artist), class: "card-link" %>
             </div>
@@ -60,7 +60,7 @@
             </div>
           </div>
           <div class="col-xs-6 text-center">
-            <div class="circle2"><%= link_to "SIGN UP", new_user_session_path %></div>
+            <div class="circle2"><%= link_to "SIGN UP", new_user_registration_path %></div>
           </div>
         </div>
       </div>
